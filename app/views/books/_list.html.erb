@@ -11,7 +11,11 @@
     <% books.each do |book| %>
       <tr>
         <td scope="row"><%= image_tag user.get_profile_image(100,100) %></td>
-        <td scope="row"><%= book.title %></td>
+        <td scope="row">
+          <%=link_to book_path(book.id) do %>
+            <%= book.title %>
+          <% end %>
+        </td>
         <td scope="row"><%= book.body %></td>
       </tr>
     <% end %>
