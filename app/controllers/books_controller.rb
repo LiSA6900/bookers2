@@ -24,11 +24,17 @@ class BooksController < ApplicationController
   def edit
     @book = Book.find(params[:id])
   end
-  
+
   def destroy
-    @post_image = PostImage.find(params[:id])
-    @post_image.destroy
-    redirect_to book_path(@book.id)
+    @book = Book.find(params[:id])
+    @book.destroy
+    redirect_to books_path
+  end
+
+  def update
+    book = Book.find(params[:id])
+    book.update(book.params)
+    redirect_to book_path(book.id)
   end
 
   private
