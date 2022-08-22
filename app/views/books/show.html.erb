@@ -5,7 +5,7 @@
     </div>
 
     <div class="col-md-8 offset-md-1">
-      <h1>Book detail</h1>
+      <h2>Book detail</h2>
         <table class="table table-hover">
           <thbody>
           <% @books.each do |book| %>
@@ -13,7 +13,7 @@
               <td scope="row">
                 <%= image_tag @user.get_profile_image(100,100) %>
                 <%= link_to user_path(@user.id) do %>
-                  <p><%= @user.name %></p>
+                  <p><%= @book.user.name %></p>
                 <% end %>
               </td>
               <td scope="row">
@@ -22,12 +22,14 @@
                 <% end %>
               </td>
               <td scope="row"><%= book.body %></td>
-              <td>
-                <%= link_to "Edit", edit_book_path(book.id) %>
-              </td>
-              <td>
-                <%= link_to "Destroy", book_path(book.id), method: :delete %>
-              </td>
+              <% if @book.user == current_user %>
+                <td>
+                  <%= link_to "Edit", edit_book_path(book.id), class: "btn btn-success btn-sm mb-3 btn-sm" %>
+                </td>
+                <td>
+                  <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-danger btn-sm btn-sm mb-3" %>
+                </td>
+              <% end %>
             </tr>
           <% end %>
           </thbody>

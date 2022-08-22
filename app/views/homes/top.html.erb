@@ -5,16 +5,16 @@
       <p>In <i class="fa-solid fa-book"></i><strong>Bookers,</strong></p>
       <p>you can share and exchange your opinions , inpressions , and emotions</p>
       <p>about various books!</p>
-      <div class= "btn-wrapper mx-auto col-10">
-        <div class= "row">
-          <%= link_to new_user_session_path do %>
-            <button class= "btn btn-info btn-sm mb-3 btn-block">Log in</button>
+      <div class="btn-wrapper col-10 mx-auto">
+        <div class="row">
+          <%= link_to new_user_session_path, class: "btn btn-info btn-sm btn-block mb-3" do %>
+            <span>Log in</span>
           <% end %>
         </div>
-        <div class= "row">
-          <%= link_to new_user_registration_path do %>
-            <button class= "btn btn-success btn-sm btn-block">Sign up</button>
-          <% end %>
+        <div class="row">
+          <%= link_to new_user_registration_path, class: "btn btn-success btn-sm btn-block" do %>
+            <span>Sign up</span>
+          <% end %> 
         </div>
       </div>
     </div>

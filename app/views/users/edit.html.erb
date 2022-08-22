@@ -17,7 +17,7 @@
       <%= form_with model: @user do |f| %>
         <div class="form-group">
           <h6><label for="userName">Name</label></h6>
-          <%= f.text_field :name %>
+          <%= f.text_field :name, class: "form-control" %>
         </div>
         <div class="form-group">
           <h6><label for="userImage">Image</label></h6>
@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">
           <h6><label for="userIntroduction">Introduction</label></h6>
-          <%= f.text_area :introduction %>
+          <%= f.text_area :introduction, class: "form-control" %>
         </div>
         <div class="form-group">
           <%= f.submit "Update User", class: "btn btn-secondary" %>
