@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
-    @user = User.find(params[:id])
     @users = User.all
+    @user = current_user
   end
 
   def show
@@ -11,11 +11,6 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    if @user == current_user
-      redirect_to books_path
-    else
-      render :edit
-    end
   end
 
   def update
@@ -33,7 +28,9 @@ class UsersController < ApplicationController
     if @book.save
       redirect_to book_path(@book.id), notice: "You have created book successfully."
     else
-      render action :index, :show
+      @user = User.find(params[:id])
+      @books = @user.books
+      render :show
     end
   end
 

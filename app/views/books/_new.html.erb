@@ -1,4 +1,4 @@
-<h2 class="mt-3">User info</h2>
+<h2>User info</h2>
 <%= image_tag user.get_profile_image(100, 100) %>
   <table class="table">
     <thbody>
@@ -13,8 +13,8 @@
     </thbody>
   </table>
   <div class="row">
-    <%= link_to edit_user_path(user.id), class: 'btn btn-outline-secondary btn-block' do %>
-      <span><i class="fa-solid fa-user-gear"></i></span>
+    <%= link_to edit_user_path(current_user.id), class: 'btn btn-outline-secondary btn-block' do %>
+      <span><i class="fas fa-user-cog"></i></span>
     <% end %>
   </div>
 

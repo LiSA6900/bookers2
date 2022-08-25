@@ -22,44 +22,44 @@
           <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
             <li class="nav-item">
-              <%=link_to root_path, class: 'nav-link text-light' do %>
-                <span><i class="fa-solid fa-house-chimney"></i> Home </span>
+              <%=link_to books_path, class: 'nav-link text-light' do %>
+                <span><i class="fas fa-home"></i> Home </span>
               <% end %>
             </li>
             <li class="nav-item">
               <%=link_to users_path, class: 'nav-link text-light' do %>
-                <span><i class="fa-solid fa-users"></i> Users </span>
+                <span><i class="fas fa-users"></i> Users </span>
               <% end %>
             </li>
             <li class="nav-item">
               <%=link_to books_path, class: 'nav-link text-light' do %>
-                <span><i class="fa-solid fa-book-open"></i> Books </span>
+                <span><i class="fas fa-book-open"></i> Books </span>
               <% end %>
             </li>
             <li class="nav-item">
               <%=link_to destroy_user_session_path, method: :delete, class: 'nav-link text-light' do %>
-                <span><i class="fa-solid fa-right-from-bracket"></i> Log out </span>
+                <span><i class="fas fa-sign-out-alt"></i> Log out </span>
               <% end %>
             </li>
           <% else %>
             <li class="nav-item">
               <%=link_to root_path, class: 'nav-link text-light' do %>
-                <span><i class="fa-solid fa-house-chimney"></i> Home </span>
+                <span><i class="fas fa-home"></i> Home </span>
               <% end %>
             </li>
             <li class="nav-item">
               <%=link_to about_path, class: 'nav-link text-light' do %>
-                <span><i class="fa-solid fa-link"></i> About </span>
+                <span><i class="fas fa-link"></i> About </span>
               <% end %>
             </li>
             <li class="nav-item">
               <%=link_to new_user_registration_path, class: 'nav-link text-light' do %>
-                <span><i class="fa-solid fa-user-plus"></i> Sign up </span>
+                <span><i class="fas fa-user-plus"></i> Sign up </span>
               <% end %>
             </li>
             <li class="nav-item">
               <%=link_to new_user_session_path, class: 'nav-link text-light' do %>
-                <span><i class="fa-solid fa-right-to-bracket"></i> Log in </span>
+                <span><i class="fas fa-sign-in-alt"></i> Log in </span>
               <% end %>
             </li>
           <% end %>
@@ -73,7 +73,7 @@
     <p class="notice"><%= notice %></p>
     <%= yield %>
   </body>
-    
+
   <footer class="container mt-5">
     <div class="row">
       <div class="mx-auto">
